@@ -1,6 +1,13 @@
 # bmi_calculator
 Streamlit BMI calculator app
 
+## Run this app
+
+```bash
+$ streamlit run bmi_calc_app.py
+```
+
+## Code
 ```python
 import streamlit as st
 
