@@ -1,5 +1,6 @@
-# bmi_calculator
-Streamlit BMI calculator app
+# Streamlit BMI calculator app
+
+![screenshot](https://raw.githubusercontent.com/asehmi/bmi_calculator/main/bmi_calc_app.png)
 
 ## Run this app
 
