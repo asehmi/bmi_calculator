@@ -1,6 +1,6 @@
 import streamlit as st
 
-outside_display_area = st.container()
+outside_expander_area = st.container()
 
 with st.expander('Show the code', expanded=True):
     with st.echo():
@@ -14,7 +14,7 @@ with st.expander('Show the code', expanded=True):
             state.WEIGHT = state['weight']
             state.HEIGHT = state['height']
 
-        with outside_display_area:
+        with outside_expander_area:
             c1, c2 = st.columns([1,1])
             with c1:
                 guage = st.empty()
@@ -100,7 +100,7 @@ with st.expander('Show the code', expanded=True):
         </body></html>
         """
 
-        with outside_display_area:
+        with outside_expander_area:
             import streamlit.components.v1 as components
 
             with guage:
