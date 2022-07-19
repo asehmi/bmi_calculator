@@ -61,7 +61,8 @@ with st.expander('Show the code', expanded=True):
         )
         dial_rotation = round(((BMI_adjusted - bmi_gauge_lower) / bmi_guage_range) * 180.0, 1)
 
-        svg = f"""
+        html = f"""
+        <html><body>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300px" height="163px" viewBox="0 0 300 163">
         <g transform="translate(18,18)" style="font-family:arial,helvetica,sans-serif;font-size: 12px;">
             <defs>
@@ -108,10 +109,15 @@ with st.expander('Show the code', expanded=True):
             <text x="67" y="120" style="font-size: 30px;font-weight:bold;color:#000;">BMI = {BMI}</text>
         </g>
         </svg>
+        </body></html>
         """
 
         with outside_display_area:
-            guage.markdown(svg.replace('\n',''), unsafe_allow_html=True)
+            import streamlit.components.v1 as components
+
+            with guage:
+                components.html(html.replace('\n',''))
+
             st.subheader(f'BMI level is {level} ({BMI})')
             # st.caption(f'Rotation: {dial_rotation} degrees')
 ```
